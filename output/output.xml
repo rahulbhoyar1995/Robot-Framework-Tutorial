@@ -1,43 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.11.0 on darwin)" generated="2024-04-12T13:37:31.025488" rpa="false" schemaversion="5">
-<suite id="s1" name="Test" source="/Users/rahulbhoyar/Library/CloudStorage/GoogleDrive-rahulbhoyaroffice@gmail.com/My Drive/Colab Notebooks/python_projects/Robot-Framework-Tutorial/test.robot">
-<kw name="Create Output Directory" type="SETUP">
-<kw name="Create Directory">
-<msg time="2024-04-12T13:37:31.035672" level="FAIL">No keyword with name 'Create Directory' found.</msg>
-<arg>output</arg>
-<status status="FAIL" start="2024-04-12T13:37:31.035659" elapsed="0.000031">No keyword with name 'Create Directory' found.</status>
+<robot generator="Robot 7.0 (Python 3.11.0 on darwin)" generated="2024-04-12T13:41:49.602997" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Case2" source="/Users/rahulbhoyar/Library/CloudStorage/GoogleDrive-rahulbhoyaroffice@gmail.com/My Drive/Colab Notebooks/python_projects/Robot-Framework-Tutorial/test_case2.robot">
+<test id="s1-t1" name="Simple Test Case" line="10">
+<kw name="Should Be Title Case">
+<msg time="2024-04-12T13:41:49.613865" level="FAIL">No keyword with name 'Should Be Title Case' found.</msg>
+<arg>Robot Framework</arg>
+<status status="FAIL" start="2024-04-12T13:41:49.613847" elapsed="0.000038">No keyword with name 'Should Be Title Case' found.</status>
 </kw>
-<status status="FAIL" start="2024-04-12T13:37:31.035145" elapsed="0.000792">No keyword with name 'Create Directory' found.</status>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>Text123</arg>
+<arg>Text123</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" start="2024-04-12T13:41:49.613979" elapsed="0.000010"/>
 </kw>
-<test id="s1-t1" name="Login User with Password" line="10">
-<tag>positive</tag>
-<status status="FAIL" start="2024-04-12T13:37:31.035968" elapsed="0.000121">Parent suite setup failed:
-No keyword with name 'Create Directory' found.</status>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>5 + 5 == 10</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" start="2024-04-12T13:41:49.614041" elapsed="0.000008"/>
+</kw>
+<doc>Shows some assertion keywords</doc>
+<status status="FAIL" start="2024-04-12T13:41:49.613222" elapsed="0.000895">No keyword with name 'Should Be Title Case' found.</status>
 </test>
-<test id="s1-t2" name="Denied Login with Wrong Password" line="16">
-<tag>negative</tag>
-<status status="FAIL" start="2024-04-12T13:37:31.036166" elapsed="0.000090">Parent suite setup failed:
-No keyword with name 'Create Directory' found.</status>
+<test id="s1-t2" name="Test with Keywords" line="16">
+<kw name="Store Text">
+<msg time="2024-04-12T13:41:49.614559" level="FAIL">No keyword with name 'Store Text' found.</msg>
+<arg>Hail Our Robot</arg>
+<status status="FAIL" start="2024-04-12T13:41:49.614548" elapsed="0.000025">No keyword with name 'Store Text' found.</status>
+</kw>
+<kw name="Add Text To Stored Text">
+<arg>Overlords!</arg>
+<status status="NOT RUN" start="2024-04-12T13:41:49.614921" elapsed="0.000008"/>
+</kw>
+<kw name="Verify Stored Text Length">
+<arg>25</arg>
+<status status="NOT RUN" start="2024-04-12T13:41:49.615243" elapsed="0.000007"/>
+</kw>
+<kw name="Get Stored Text">
+<var>${current_text}</var>
+<status status="NOT RUN" start="2024-04-12T13:41:49.615579" elapsed="0.000007"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${current_text}</arg>
+<arg>Hail Our Robot Overlords!</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" start="2024-04-12T13:41:49.615640" elapsed="0.000012"/>
+</kw>
+<status status="FAIL" start="2024-04-12T13:41:49.614189" elapsed="0.001524">No keyword with name 'Store Text' found.</status>
 </test>
-<doc>A test suite for valid login.
+<test id="s1-t3" name="Test for the year 2022" line="23">
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2024-04-12T13:41:49.615985" level="INFO">${date} = 2024-04-12 13:41:49.615951</msg>
+<var>${date}</var>
+<arg>result_format=datetime</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2024-04-12T13:41:49.615881" elapsed="0.000113"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-04-12T13:41:49.616103" level="INFO">2024-04-12 13:41:49.615951</msg>
+<arg>${date}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-04-12T13:41:49.616041" elapsed="0.000078"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2024-04-12T13:41:49.616334" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<msg time="2024-04-12T13:41:49.616378" level="FAIL">2024 != 2022</msg>
+<arg>${date.year}</arg>
+<arg>2022</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="FAIL" start="2024-04-12T13:41:49.616159" elapsed="0.000271">2024 != 2022</status>
+</kw>
+<doc>Tests if it is still 2022...</doc>
+<status status="FAIL" start="2024-04-12T13:41:49.615779" elapsed="0.000715">2024 != 2022</status>
+</test>
+<test id="s1-t4" name="Test Case that fails" line="29">
+<kw name="Check Correct Greeting">
+<msg time="2024-04-12T13:41:49.616972" level="FAIL">No keyword with name 'Check Correct Greeting' found.</msg>
+<arg>Hail Our Robot Overlords!</arg>
+<status status="FAIL" start="2024-04-12T13:41:49.616962" elapsed="0.000023">No keyword with name 'Check Correct Greeting' found.</status>
+</kw>
+<kw name="Check Correct Greeting">
+<arg>Hello World!</arg>
+<status status="NOT RUN" start="2024-04-12T13:41:49.617338" elapsed="0.000007"/>
+</kw>
+<status status="FAIL" start="2024-04-12T13:41:49.616559" elapsed="0.000839">No keyword with name 'Check Correct Greeting' found.</status>
+</test>
+<doc>This .robot file is a suite
 
 Keywords are imported from the resource file</doc>
-<status status="FAIL" start="2024-04-12T13:37:31.025944" elapsed="0.010440">Suite setup failed:
-No keyword with name 'Create Directory' found.</status>
+<status status="FAIL" start="2024-04-12T13:41:49.603463" elapsed="0.014080"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="2" skip="0">All Tests</stat>
+<stat pass="0" fail="4" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="0" fail="1" skip="0">negative</stat>
-<stat pass="0" fail="1" skip="0">positive</stat>
 </tag>
 <suite>
-<stat pass="0" fail="2" skip="0" id="s1" name="Test">Test</stat>
+<stat pass="0" fail="4" skip="0" id="s1" name="Test Case2">Test Case2</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2024-04-12T13:37:31.034871" level="ERROR">Error in file '/Users/rahulbhoyar/Library/CloudStorage/GoogleDrive-rahulbhoyaroffice@gmail.com/My Drive/Colab Notebooks/python_projects/Robot-Framework-Tutorial/test.robot' on line 5: Resource file 'keywords.resource' does not exist.</msg>
+<msg time="2024-04-12T13:41:49.612631" level="ERROR">Error in file '/Users/rahulbhoyar/Library/CloudStorage/GoogleDrive-rahulbhoyaroffice@gmail.com/My Drive/Colab Notebooks/python_projects/Robot-Framework-Tutorial/test_case2.robot' on line 5: Resource file 'keywords.resource' does not exist.</msg>
 </errors>
 </robot>
