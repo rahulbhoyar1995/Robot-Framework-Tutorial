@@ -7,6 +7,4 @@ Explore comprehensive tutorials and examples for mastering Robot Framework, an o
 ### Documentation : https://robotframework.org/
 
 ### Execution
-'''
 robot --outputdir output test.robot
-'''
